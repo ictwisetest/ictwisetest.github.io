@@ -1,1 +1,308 @@
+/* ===== Base Styles ===== */
+/* Define color variables for consistent use across the site */
+:root {
+  --primary: #e5474b;   /* Main red color for accents */
+  --dark: #1c1c1c;      /* Dark background for header/footer */
+  --light: #f8f8f8;     /* Light gray for backgrounds */
+  --gray: #717171;      /* Medium gray for text */
+}
 
+/* Reset default spacing and box sizing */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Enable smooth scrolling when clicking on anchor links */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Set base font, line spacing, and top padding for fixed header */
+body {
+  font-family: 'Lato', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: white;
+  padding-top: 70px; /* To prevent content being hidden under fixed header */
+}
+
+/* ===== Typography ===== */
+/* Style headings with primary color and spacing */
+h1, h2, h3, h4, h5, h6 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+  /* text-align: center;*/
+}
+
+/* Define sizes for different heading levels */
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.5rem; }
+
+/* Style for paragraph text */
+p {
+  margin-bottom: 1.5rem;
+  color: var(--gray);
+}
+
+/* Style links with hover effect */
+a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+a:hover {
+  color: #c0393b;
+}
+
+/* ===== Layout ===== */
+/* Center content and limit its width */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+/* Add spacing around content sections */
+.section {
+  padding: 4rem 0;
+}
+
+/* Center and space out section titles */
+.section-title {
+  text-align: center;
+  margin: 3rem 0;
+}
+
+/* ===== Header ===== */
+/* Fixed top navigation bar with shadow */
+header {
+  background: var(--dark);
+  color: white;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+  padding: 1rem 0;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Align header content using flexbox */
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Style for the logo text */
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: white;
+}
+
+/* Ensure logo images are sized consistently */
+.logo img {
+  height: 40px;
+}
+
+/* Layout and remove bullet points from nav */
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+/* Add space between nav items */
+nav li {
+  margin-left: 2rem;
+}
+
+/* White nav links */
+nav a {
+  color: white;
+  font-weight: 500;
+}
+
+/* ===== Buttons ===== */
+/* Main button style */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.8rem;
+  background: var(--primary);
+  color: white;
+  border-radius: 4px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  transition: all 0.3s ease;
+  border: none;
+  cursor: pointer;
+}
+
+/* Hover effect for button */
+.btn:hover {
+  background: #c0393b;
+  transform: translateY(-2px);
+}
+
+/* Outline version of the button */
+.btn-outline {
+  background: transparent;
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+.btn-outline:hover {
+  background: var(--primary);
+  color: white;
+}
+
+/* ===== Hero Section ===== */
+/* Large banner section with background image */
+.hero {
+  background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('../images/banner.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: center;
+  padding: 8rem 0;
+  margin-bottom: 3rem;
+}
+
+.hero h1 {
+  color: white;
+  font-size: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero p {
+  color: rgba(255,255,255,0.9);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 2rem;
+}
+
+/* ===== Grid System ===== */
+/* Create responsive rows and columns */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -15px;
+}
+
+.col {
+  padding: 0 15px;
+  flex: 1;
+  min-width: 250px;
+  margin-bottom: 2rem;
+}
+
+/* ===== Card ===== */
+/* Card layout for content blocks */
+.card {
+  background: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+/* Image in card */
+.card-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+/* Padding for card content */
+.card-body {
+  padding: 1.5rem;
+}
+
+/* ===== Form Styles ===== */
+/* Space between form fields */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+/* Style text inputs and textareas */
+.form-control {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+/* Ensure textareas have a minimum height */
+textarea.form-control {
+  min-height: 150px;
+}
+
+/* Style form labels */
+label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+/* ===== Footer ===== */
+/* Style for page footer */
+footer {
+  background: var(--dark);
+  color: white;
+  padding: 3rem 0;
+  text-align: center;
+}
+
+/* Horizontal list of footer links */
+.footer-links {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.footer-links a {
+  color: white;
+  margin: 0 1rem;
+}
+
+/* Smaller copyright text */
+.copyright {
+  color: rgba(255,255,255,0.7);
+  font-size: 0.9rem;
+}
+
+/* ===== Responsive ===== */
+/* Make layout adapt on smaller screens */
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+  }
+
+  nav ul {
+    margin-top: 1rem;
+  }
+
+  nav li {
+    margin: 0 0.5rem;
+  }
+
+  .hero {
+    padding: 5rem 0;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+}
